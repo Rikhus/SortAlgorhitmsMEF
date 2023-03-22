@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0822FAAE-A1CF-403B-AC3F-BBEAFFB34716}</ProjectGuid>
+    <ProjectGuid>{7DECADBB-8E84-4F7B-B014-219ACF257123}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ShakerSort</RootNamespace>
-    <AssemblyName>ShakerSort</AssemblyName>
+    <RootNamespace>BogoSort</RootNamespace>
+    <AssemblyName>BogoSort</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -50,6 +50,9 @@
       <Project>{2bd1d66c-f44d-4b15-86c9-981950fef538}</Project>
       <Name>Protocol</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Directory.Build.props" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
