@@ -41,16 +41,12 @@ namespace QuickSort
                 if (array[i] < array[maxIndex])
                 {
                     pivot++;
-                    var t1 = array[pivot];
-                    array[pivot] = array[i];
-                    array[i] = t1;
+                    (array[i], array[pivot]) = (array[pivot], array[i]);
                 }
             }
 
             pivot++;
-            var t = array[pivot];
-            array[pivot] = array[maxIndex];
-            array[maxIndex] = t;
+            (array[maxIndex], array[pivot]) = (array[pivot], array[maxIndex]);
             return pivot;
         }
 

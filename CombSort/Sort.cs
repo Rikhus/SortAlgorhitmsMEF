@@ -33,9 +33,7 @@ namespace CombSort
                 {
                     if (list[i] > list[i + currentStep])
                     {
-                        var temp = list[i];
-                        list[i] = list[i + currentStep];
-                        list[i + currentStep] = temp;
+                        (list[i + currentStep], list[i]) = (list[i], list[i + currentStep]);
                         yield return list;
                     }
                 }
@@ -51,9 +49,7 @@ namespace CombSort
                 {
                     if (list[j] > list[j + 1])
                     {
-                        var temp = list[j];
-                        list[j] = list[j + 1];
-                        list[j + 1] = temp;
+                        (list[j + 1], list[j]) = (list[j], list[j + 1]);
                         swapFlag = true;
                         yield return list;
                     }

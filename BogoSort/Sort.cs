@@ -54,9 +54,7 @@ namespace BogoSort
             {
                 n--;
                 var i = random.Next(n + 1);
-                var temp = a[i];
-                a[i] = a[n];
-                a[n] = temp;
+                (a[n], a[i]) = (a[i], a[n]);
             }
 
             return a;

@@ -63,9 +63,7 @@ namespace PancakeSort
         {
             for (var start = 0; start < end; start++, end--)
             {
-                var temp = array[start];
-                array[start] = array[end];
-                array[end] = temp;
+                (array[end], array[start]) = (array[start], array[end]);
             }
         }
 

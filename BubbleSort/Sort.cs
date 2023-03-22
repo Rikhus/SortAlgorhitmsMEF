@@ -31,9 +31,7 @@ namespace BubbleSort
                 {
                     if (list[j] > list[j + 1])
                     {
-                        var temp = list[j];
-                        list[j] = list[j + 1];
-                        list[j + 1] = temp;
+                        (list[j + 1], list[j]) = (list[j], list[j + 1]);
                         yield return list;
                     }
                 }
