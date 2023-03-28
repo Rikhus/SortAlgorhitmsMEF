@@ -36,7 +36,7 @@ namespace TryMEFApp
             InitializeComponent();
 
             viewModel = DataContext as MainViewModel;
-            foreach(var sort in Import.LoadAndGetSortAlgorhytms())
+            foreach(var sort in Import.LoadAndGetSortAlgorithms())
             {
                 viewModel.Sorts.Add(sort);
             }
