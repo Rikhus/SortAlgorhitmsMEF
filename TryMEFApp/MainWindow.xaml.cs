@@ -23,9 +23,9 @@ namespace TryMEFApp
     /// </summary>
     public partial class MainWindow : Window
     {
-        const int ELEMENTS_COUNT = 50;
-        const int MAX_VALUE = 100;
-        const int DELAY_MS = 20;
+        const int ELEMENTS_COUNT = 150;
+        const int MAX_VALUE = 150;
+        const int DELAY_MS = 10;
 
         List<int> list = new List<int>();
 

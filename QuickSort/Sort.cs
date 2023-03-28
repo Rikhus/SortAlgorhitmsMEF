@@ -30,25 +30,7 @@ namespace QuickSort
                 yield return enumerator.Current;
             }
             yield return enumerator.Current;
-        }
-
-        //метод возвращающий индекс опорного элемента
-        static int Partition(List<int> array, int minIndex, int maxIndex)
-        {
-            var pivot = minIndex - 1;
-            for (var i = minIndex; i < maxIndex; i++)
-            {
-                if (array[i] < array[maxIndex])
-                {
-                    pivot++;
-                    (array[i], array[pivot]) = (array[pivot], array[i]);
-                }
-            }
-
-            pivot++;
-            (array[maxIndex], array[pivot]) = (array[pivot], array[maxIndex]);
-            return pivot;
-        }
+        }        
 
         //быстрая сортировка
         IEnumerator<List<int>> Sort(List<int> array, int minIndex, int maxIndex)
@@ -59,20 +41,31 @@ namespace QuickSort
             }
             else
             {
-                var pivotIndex = Partition(array, minIndex, maxIndex);
+                var pivot = minIndex - 1;
+                for (var i = minIndex; i < maxIndex; i++)
+                {
+                    if (array[i] < array[maxIndex])
+                    {
+                        pivot++;
+                        (array[i], array[pivot]) = (array[pivot], array[i]);
+                        yield return array;
+                    }
+                }
 
+                pivot++;
+                (array[maxIndex], array[pivot]) = (array[pivot], array[maxIndex]);
+                yield return array;
+                var pivotIndex = pivot;
                 var enumerator = Sort(array, minIndex, pivotIndex - 1);
                 while (enumerator.MoveNext())
                 {
                     yield return enumerator.Current;
                 }
-                yield return enumerator.Current;
                 enumerator = Sort(array, pivotIndex + 1, maxIndex);
                 while (enumerator.MoveNext())
                 {
                     yield return enumerator.Current;
                 }
-                yield return enumerator.Current;
 
                 yield return array;
             }            
