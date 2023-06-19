@@ -109,14 +109,7 @@ namespace TryMEFApp
         public IEnumerable<Lazy<T>> readerExtCollection { get; set; }
         public void OnImportsSatisfied()
         {
-            if (ImportSatisfied != null)
-            {
-                ImportSatisfied.Invoke(this, new ImportEventArgs("Модуль загружен успешно"));
-            }
-            else
-            {
-                ImportSatisfied.Invoke(this, new ImportEventArgs("Ошибка загрузки модуля"));
-            }
+            ImportSatisfied?.Invoke(this, new ImportEventArgs("Модуль загружен успешно"));
         }
     }
 
