@@ -32,7 +32,7 @@ namespace TryMEFApp
         /// конкретные значения из библиотек
         /// </summary>
         /// <returns>Список провайдеров</returns>
-        public static List<ISort> LoadAndGetSortAlgorhytms()
+        public static List<ISort> LoadAndGetSortAlgorithms()
         {
             DirectoryCatalog = new DirectoryCatalog(Environment.CurrentDirectory);
             HostContainer = new CompositionContainer(DirectoryCatalog);
